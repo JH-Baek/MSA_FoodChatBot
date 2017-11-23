@@ -2,6 +2,7 @@ var builder = require('botbuilder');
 var food = require('./FavouriteFood');
 var restaurant = require('./RestaurantCard');
 var nutrition = require('./NutritionCard');
+var customVision = require('./CustomVision');
 // Some sections have been omitted
 
 exports.startDialog = function (bot) {
