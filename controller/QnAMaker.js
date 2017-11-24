@@ -1,4 +1,4 @@
-var rest = require('../API/Restclient');
+var rest = require('../API/RestClient');
 
 exports.talkToQnA = function postQnAResults(session, question){
     var url = 'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/aa4fbf9b-a4c2-4435-b0fa-daa05718b3d1/generateAnswer';
