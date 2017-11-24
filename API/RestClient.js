@@ -1,5 +1,28 @@
 var request = require('request');
 
+exports.postQnAResults = function getData(url, session, question, callback){
+    var options = {
+        url: url,
+        method: 'POST',
+        headers: {
+            'Ocp-Apim-Subscription-Key': 'c23b07f56e6f44df9340d714cbdc382a',
+            'Content-Type':'application/json'
+        },
+        json: {
+            "question" : question
+        }
+      };
+  
+      request(options, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            callback(body, session, question);
+        }
+        else{
+            console.log(error);
+        }
+      });
+  };
+
 exports.getFavouriteFood = function getData(url, session, username, callback){
     request.get(url, {'headers':{'ZUMO-API-VERSION': '2.0.0'}}, function(err,res,body){
         if(err){
